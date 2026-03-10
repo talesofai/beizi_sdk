@@ -147,7 +147,8 @@ object FileUtil {
                 appCacheDir = File(cacheDirPath)
             }
         }
-        return appCacheDir
+        // Ensure a non-null File is always returned
+        return appCacheDir ?: context.cacheDir
     }
 
     @JvmStatic
